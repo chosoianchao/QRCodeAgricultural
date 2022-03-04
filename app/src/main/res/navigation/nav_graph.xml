@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.utt.qrcodeagricultural.ui.main.fragment.MainFragment"
+        android:label="MainFragment"
+        tools:layout="@layout/main_fragment">
+        <action
+            android:id="@+id/action_mainFragment_to_scanFragment"
+            app:destination="@id/scanFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_likeFragment"
+            app:destination="@id/likeFragment"
+            app:enterAnim="@animator/slide_in_right"
+            app:exitAnim="@animator/slide_out_left"
+            app:popEnterAnim="@animator/slide_in_left"
+            app:popExitAnim="@animator/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/scanFragment"
+        android:name="com.utt.qrcodeagricultural.ui.scan.fragment.ScanFragment"
+        android:label="ScanFragment"
+        tools:layout="@layout/scan_fragment">
+        <action
+            android:id="@+id/action_scanFragment_to_resultFragment"
+            app:destination="@id/resultFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.utt.qrcodeagricultural.ui.splash.fragment.SplashFragment"
+        android:label="SplashFragment"
+        tools:layout="@layout/splash_fragment">
+        <action
+            android:id="@+id/action_splashFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:enterAnim="@animator/slide_in_right"
+            app:exitAnim="@animator/slide_out_left"
+            app:popEnterAnim="@animator/slide_in_left"
+            app:popExitAnim="@animator/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.utt.qrcodeagricultural.ui.result.fragment.ResultFragment"
+        android:label="ResultFragment"
+        tools:layout="@layout/result_fragment" />
+    <fragment
+        android:id="@+id/likeFragment"
+        android:name="com.utt.qrcodeagricultural.ui.like.fragment.LikeFragment"
+        android:label="LikeFragment"
+        tools:layout="@layout/like_fragment" />
+</navigation>

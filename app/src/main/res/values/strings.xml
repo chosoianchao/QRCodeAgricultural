@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">QRCodeAgricultural</string>
+    <string name="error_data">Dữ liệu không hợp lệ</string>
+    <string name="permission_required">Camera Permission is Required</string>
+    <string name="system_error">Some things went wrong</string>
+    <string name="internet_not_connected">Not Connected to Internet</string>
+    <string name="internet_connected">Connected to Internet</string>
+    <string name="scan_poster">Scan the QR code on the poster and watch information agricultural</string>
+    <string name="scan_qr_code">Scan QR Code</string>
+    <string name="like">Like</string>
+    <string name="love">Yêu thích</string>
+    <string name="qr_code">QR Code</string>
+    <string name="album_love">Đã thêm vào mục yêu thích</string>
+    <string name="add_success">Đã thêm vào bộ sưu tập</string>
+    <string name="more_information">Xem thêm thông tin tại đây</string>
+    <string name="price">"Giá tiền: "</string>
+    <string name="desc">"Mô tả: "</string>
+    <string name="name">"Tên sản phẩm: "</string>
+    <string name="search_production">Tìm kiếm thông tin sản phẩm</string>
+</resources>

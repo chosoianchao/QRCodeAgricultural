@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "74291922745",
+    "project_id": "agricultural-d6294",
+    "storage_bucket": "agricultural-d6294.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:74291922745:android:be3d196d59d256c1f68ae8",
+        "android_client_info": {
+          "package_name": "com.utt.qrcodeagricultural"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "74291922745-crqnre1b5i05hlr70dma106fauj488is.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.utt.qrcodeagricultural",
+            "certificate_hash": "d71375e55ab2fc258f437268370bceefaa0f8a86"
+          }
+        },
+        {
+          "client_id": "74291922745-9fedf6fufc6hdar1sr07l417e761ehqd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1179XoRsiADxIgU179xkL8EGRi1-7w_4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "74291922745-9fedf6fufc6hdar1sr07l417e761ehqd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
