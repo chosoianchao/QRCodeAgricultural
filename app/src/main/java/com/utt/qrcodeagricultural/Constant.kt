@@ -19,7 +19,7 @@ class Constant {
         const val DELETE = "Xóa"
         const val CANCEL = "Hủy"
         const val NAME = "Name"
-        const val URI = "https://vi.wikipedia.org/wiki/"
+        const val URI = "http://www.google.com/search?q="
         const val DIALOG = "Dialog"
         const val TIME_DELAY = 3000
     }

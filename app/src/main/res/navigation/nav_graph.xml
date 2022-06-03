@@ -36,8 +36,8 @@
         android:label="SplashFragment"
         tools:layout="@layout/splash_fragment">
         <action
-            android:id="@+id/action_splashFragment_to_mainFragment"
-            app:destination="@id/mainFragment"
+            android:id="@+id/action_splashFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
             app:enterAnim="@animator/slide_in_right"
             app:exitAnim="@animator/slide_out_left"
             app:popEnterAnim="@animator/slide_in_left"
@@ -53,4 +53,29 @@
         android:name="com.utt.qrcodeagricultural.ui.like.fragment.LikeFragment"
         android:label="LikeFragment"
         tools:layout="@layout/like_fragment" />
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.utt.qrcodeagricultural.ui.login.fragment.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/login_fragment">
+        <action
+            android:id="@+id/action_loginFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:enterAnim="@animator/slide_in_right"
+            app:exitAnim="@animator/slide_out_left"
+            app:popEnterAnim="@animator/slide_in_left"
+            app:popExitAnim="@animator/slide_out_right" />
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment"
+            app:enterAnim="@animator/slide_in_right"
+            app:exitAnim="@animator/slide_out_left"
+            app:popEnterAnim="@animator/slide_in_left"
+            app:popExitAnim="@animator/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.utt.qrcodeagricultural.ui.register.fragment.RegisterFragment"
+        android:label="RegisterFragment"
+        tools:layout="@layout/register_fragment" />
 </navigation>

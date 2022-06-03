@@ -1,6 +1,7 @@
 package com.utt.qrcodeagricultural.ui.scan.fragment
 
 import android.Manifest
+import android.view.View
 import androidx.core.os.bundleOf
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -39,11 +40,17 @@ class ScanFragment : BaseFragment<ScanFragmentBinding>() {
     override fun initViews() {
         codeScanner = context?.let { CodeScanner(it, viewBinding.scannerView) }
         codeScanner?.decodeCallback = DecodeCallback {
+            activity?.runOnUiThread {
+                viewBinding.progressBar.visibility = View.VISIBLE
+                setCancelOutSideProgressBar()
+            }
             viewModel.getAgricultural(it, ::getResult)
         }
     }
 
     private fun getResult(agricultural: Agricultural) {
+        viewBinding.progressBar.visibility = View.GONE
+        clearCancelOutSizeProgressBar()
         val bundle = bundleOf(
             AGRICULTURAL to agricultural
         )
@@ -64,6 +71,7 @@ class ScanFragment : BaseFragment<ScanFragmentBinding>() {
 
             override fun onPermissionDenied(p0: PermissionDeniedResponse?) {
                 context.showToastShort(getString(R.string.permission_required))
+                findNavController().popBackStack()
             }
 
             override fun onPermissionRationaleShouldBeShown(

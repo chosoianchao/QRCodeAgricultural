@@ -4,8 +4,8 @@ import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.viewModels
 import androidx.navigation.NavDirections
 import androidx.navigation.fragment.findNavController
-import com.utt.qrcodeagricultural.base.BaseFragment
 import com.utt.qrcodeagricultural.R
+import com.utt.qrcodeagricultural.base.BaseFragment
 import com.utt.qrcodeagricultural.databinding.MainFragmentBinding
 import com.utt.qrcodeagricultural.ui.main.viewmodel.MainVM
 import dagger.hilt.android.AndroidEntryPoint
@@ -32,6 +32,7 @@ class MainFragment : BaseFragment<MainFragmentBinding>() {
         requireActivity().onBackPressedDispatcher.addCallback(this,
             object : OnBackPressedCallback(true) {
                 override fun handleOnBackPressed() {
+                    viewModel.signOut()
                     requireActivity().finish()
                 }
             })

@@ -5,6 +5,7 @@ import android.content.Intent
 import android.net.Uri
 import android.text.Editable
 import android.text.TextWatcher
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -47,6 +48,13 @@ class LikeFragment : BaseFragment<LikeFragmentBinding>(), OnActionCallBack {
         )
         getData()
         searchAgricultural()
+        requireActivity().onBackPressedDispatcher.addCallback(this,
+            object : OnBackPressedCallback(true) {
+                override fun handleOnBackPressed() {
+                    viewModel.signOut()
+                    requireActivity().finish()
+                }
+            })
     }
 
     private fun getData() {
@@ -105,8 +113,10 @@ class LikeFragment : BaseFragment<LikeFragmentBinding>(), OnActionCallBack {
             optionsAgricultural(agricultural)
         } else if (key.equals(DIALOG)) {
             val agricultural: Agricultural = data as Agricultural
+            val finalUrl: String = URI + agricultural.Name
+            val uri: Uri = Uri.parse(finalUrl)
             val webIntent =
-                Intent(Intent.ACTION_VIEW, Uri.parse("$URI${agricultural.Name}"))
+                Intent(Intent.ACTION_VIEW, uri)
             startActivity(webIntent)
         }
     }

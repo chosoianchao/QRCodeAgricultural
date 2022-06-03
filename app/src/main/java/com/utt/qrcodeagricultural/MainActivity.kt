@@ -36,12 +36,19 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         viewBinding?.bottomNavigation?.apply {
             setupWithNavController(navController)
         }
+
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
                 R.id.mainFragment -> {
                     viewBinding?.groupBottomNav?.visibility = View.VISIBLE
                 }
                 R.id.likeFragment -> {
+                    viewBinding?.groupBottomNav?.visibility = View.VISIBLE
+                }
+                R.id.scanFragment -> {
+                    viewBinding?.groupBottomNav?.visibility = View.GONE
+                }
+                R.id.resultFragment -> {
                     viewBinding?.groupBottomNav?.visibility = View.VISIBLE
                 }
             }
