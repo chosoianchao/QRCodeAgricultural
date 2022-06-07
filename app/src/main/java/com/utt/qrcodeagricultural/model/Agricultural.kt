@@ -22,8 +22,21 @@ data class Agricultural(
 
     @ColumnInfo(name = "Desc")
     val Desc: String? = "",
-) : Serializable {
+
+    @ColumnInfo(name = "supplier")
+    val supplier: String? = "",
+
+    @ColumnInfo(name = "dateOfManufacture")
+    val dateOfManufacture: String? = "",
+
+    @ColumnInfo(name = "expiryDate")
+    val expiryDate: String? = "",
+
+    @ColumnInfo(name = "imageSupplier")
+    val imageSupplier: String? = "",
+
+    ) : Serializable {
     override fun toString(): String {
-        return "Agricultural(ID=$ID, Name=$Name, Price=$Price, Image=$Image, Desc=$Desc)"
+        return "Agricultural(ID=$ID, Name=$Name, Price=$Price, Image=$Image, Desc=$Desc, supplier=$supplier, dateOfManufacture=$dateOfManufacture, expiryDate=$expiryDate, imageSupplier=$imageSupplier)"
     }
 }

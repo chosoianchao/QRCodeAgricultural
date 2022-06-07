@@ -40,6 +40,16 @@ class ResultFragment : BaseFragment<ResultFragmentBinding>() {
                 error(R.drawable.broken_image)
             }
         }
+        agricultural.imageSupplier?.let {
+            val imgUri = it.toUri().buildUpon().scheme(HTTPS).build()
+            viewBinding.ivImageSupplier.load(imgUri) {
+                placeholder(R.drawable.loading_animation)
+                error(R.drawable.broken_image)
+            }
+        }
+        viewBinding.tvDateOfManufacture.text = "Ngày sản xuất: ${agricultural.dateOfManufacture}"
+        viewBinding.tvExpiryDate.text = "Ngày hết hạn: ${agricultural.expiryDate}"
+        viewBinding.tvSupplier.text = "Sản xuất tại: ${agricultural.supplier}"
         viewBinding.btLike.setOnClickListener {
             viewModel.insertValue(agricultural)
         }

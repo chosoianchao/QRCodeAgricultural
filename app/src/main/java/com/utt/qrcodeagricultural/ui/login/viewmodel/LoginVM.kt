@@ -24,10 +24,15 @@ class LoginVM @Inject constructor() : BaseViewModel() {
         password: String,
         actionSuccess: () -> Unit,
         actionFailed: () -> Unit,
+        action: () -> Unit,
     ) {
         auth?.signInWithEmailAndPassword(email, password)?.addOnCompleteListener { task ->
             if (task.isSuccessful) {
-                actionSuccess()
+                if (email == "admin@gmail.com") {
+                    action()
+                } else {
+                    actionSuccess()
+                }
             }
         }?.addOnFailureListener { actionFailed() }
     }

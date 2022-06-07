@@ -22,6 +22,7 @@ import com.utt.qrcodeagricultural.model.Agricultural
 import com.utt.qrcodeagricultural.ui.scan.viewmodel.ScanVM
 import dagger.hilt.android.AndroidEntryPoint
 
+
 @AndroidEntryPoint
 class ScanFragment : BaseFragment<ScanFragmentBinding>() {
     private var codeScanner: CodeScanner? = null

@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 import com.utt.qrcodeagricultural.model.Agricultural
 import com.utt.qrcodeagricultural.network.local.dao.AgriculturalDao
 
-@Database(entities = [Agricultural::class], version = 1, exportSchema = false)
+@Database(entities = [Agricultural::class], version = 2, exportSchema = false)
 abstract class AppDB : RoomDatabase() {
 
     abstract val dao: AgriculturalDao

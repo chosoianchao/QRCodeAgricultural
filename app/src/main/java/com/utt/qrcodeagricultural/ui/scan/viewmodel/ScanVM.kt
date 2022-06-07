@@ -1,5 +1,6 @@
 package com.utt.qrcodeagricultural.ui.scan.viewmodel
 
+import android.util.Log
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
@@ -19,6 +20,7 @@ class ScanVM @Inject constructor() : BaseViewModel() {
             getData?.addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     for (postSnapShot in snapshot.children) {
+                        Log.d("Thang", "postSnapshot = $postSnapShot")
                         if (postSnapShot.child(NAME).value == it.toString()) {
                             val agricultural = postSnapShot.getValue<Agricultural>()
                             agricultural?.let { result -> result(result) }

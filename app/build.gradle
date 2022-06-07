@@ -62,6 +62,7 @@ dependencies {
     implementation "io.coil-kt:coil:1.1.1"
     //Scanner QRCode
     implementation 'com.github.yuriy-budiyev:code-scanner:2.1.1'
+    implementation 'com.google.zxing:core:3.3.3'
     //CheckPermission
     implementation 'com.karumi:dexter:6.2.3'
     //room database

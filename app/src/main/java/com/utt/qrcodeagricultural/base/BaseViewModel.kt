@@ -6,6 +6,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.utt.qrcodeagricultural.Admin
 
 abstract class BaseViewModel : ViewModel() {
     protected val auth: FirebaseAuth? by lazy { FirebaseAuth.getInstance() }
@@ -16,5 +17,13 @@ abstract class BaseViewModel : ViewModel() {
     }
     fun signOut() {
         auth?.signOut()
+    }
+
+    fun validateAccount(): Admin {
+        return if ("admin@gmail.com" == mUser?.email) {
+            Admin.ADMIN
+        } else {
+            Admin.USER
+        }
     }
 }

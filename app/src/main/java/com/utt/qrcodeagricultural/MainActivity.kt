@@ -49,7 +49,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
                     viewBinding?.groupBottomNav?.visibility = View.GONE
                 }
                 R.id.resultFragment -> {
-                    viewBinding?.groupBottomNav?.visibility = View.VISIBLE
+                    viewBinding?.groupBottomNav?.visibility = View.GONE
                 }
             }
         }

@@ -5,6 +5,7 @@ import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.utt.qrcodeagricultural.Account
+import com.utt.qrcodeagricultural.Admin
 import com.utt.qrcodeagricultural.Constant.Companion.showToastShort
 import com.utt.qrcodeagricultural.R
 import com.utt.qrcodeagricultural.base.BaseFragment
@@ -42,6 +43,7 @@ class LoginFragment : BaseFragment<LoginFragmentBinding>() {
                         password,
                         ::loginSuccess,
                         ::loginFailed,
+                        ::login
                     )
                 }
 
@@ -51,6 +53,14 @@ class LoginFragment : BaseFragment<LoginFragmentBinding>() {
         viewBinding.tvDontHaveAccount.setOnClickListener {
             goToRegisterScreen()
         }
+    }
+
+    private fun login() {
+        viewBinding.progressBar.visibility = View.GONE
+        clearCancelOutSizeProgressBar()
+        context?.showToastShort("Đăng nhập thành công")
+        val action = LoginFragmentDirections.actionLoginFragmentToGenerateFragment()
+        findNavController().navigate(action)
     }
 
     private fun onResult(bundle: Bundle) {
@@ -84,7 +94,12 @@ class LoginFragment : BaseFragment<LoginFragmentBinding>() {
     }
 
     private fun accountExist() {
-        val action = LoginFragmentDirections.actionLoginFragmentToMainFragment()
-        findNavController().navigate(action)
+        if (viewModel.validateAccount() == Admin.ADMIN) {
+            val action = LoginFragmentDirections.actionLoginFragmentToGenerateFragment()
+            findNavController().navigate(action)
+        } else {
+            val action = LoginFragmentDirections.actionLoginFragmentToMainFragment()
+            findNavController().navigate(action)
+        }
     }
 }
